@@ -20,7 +20,7 @@ describe('ShoppingCart', function () {
 
   it('after adding items to cart, price and cart items update accordingly', function () {
     assert.equal(itemList.length, 4);
-    //ensure no duplicates
+    //ensures no duplicates and alphabetized
     assert.deepEqual(itemList, ['Coffee', 'Newspaper', 'Potatoes', 'Rice']);
   });
 });
