@@ -23,6 +23,7 @@ class ShoppingCart {
   }
 
   add = item => {
+    //takes SKU and adds items to total and item list
     let currentItem = this.storeItems[item];
     this.cartTotal += currentItem.price;
     if (
@@ -37,10 +38,15 @@ class ShoppingCart {
   };
 
   totalAmount = () => {
+    //return total amount of all items in cart
     return Math.round(this.cartTotal * 100) / 100;
   };
 
-  itemsList = () => {};
+  itemsList = () => {
+    //return items, ordered alphabetically, no duplicates
+    this.cartItems.sort();
+    return this.cartItems;
+  };
 }
 
 module.exports = ShoppingCart;
