@@ -33,10 +33,12 @@ class ShoppingCart {
     }
 
     this.cartItems.push(currentItem.name);
-    return this.cartTotal;
+    return this.totalAmount();
   };
 
-  totalAmount = () => {};
+  totalAmount = () => {
+    return Math.round(this.cartTotal * 100) / 100;
+  };
 
   itemsList = () => {};
 }
