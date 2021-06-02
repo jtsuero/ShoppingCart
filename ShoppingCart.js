@@ -2,6 +2,7 @@ class ShoppingCart {
   constructor() {
     this.cartTotal = 0;
     this.cartItems = [];
+    //left items here for ease of readability, usually would be put in its own component
     this.storeItems = {
       STAPOT: {
         price: 10.0,
@@ -24,6 +25,7 @@ class ShoppingCart {
 
   add = item => {
     //takes SKU and adds items to total and item list
+    //could add additional safeguards to throw error if SKU does not exist
     let currentItem = this.storeItems[item];
     this.cartTotal += currentItem.price;
     if (
@@ -38,7 +40,7 @@ class ShoppingCart {
   };
 
   totalAmount = () => {
-    //return total amount of all items in cart
+    //return total amount of all items in cart, rounded to 2 decimals
     return Math.round(this.cartTotal * 100) / 100;
   };
 
