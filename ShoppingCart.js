@@ -22,9 +22,23 @@ class ShoppingCart {
     };
   }
 
-  add = item => {};
+  add = item => {
+    let currentItem = this.storeItems[item];
+    this.cartTotal += currentItem.price;
+    if (
+      this.cartItems.length === 4 ||
+      this.cartItems.includes(currentItem.name)
+    ) {
+      return this.cartTotal;
+    }
+
+    this.cartItems.push(currentItem.name);
+    return this.cartTotal;
+  };
 
   totalAmount = () => {};
 
   itemsList = () => {};
 }
+
+module.exports = ShoppingCart;
